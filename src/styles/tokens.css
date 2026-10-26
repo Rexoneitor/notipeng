@@ -1,0 +1,151 @@
+/* ──────────────────────────────────────────────────────────────────────────
+   NOTIPENG — tokens · paleta «Ártico»
+   Día: banquisa (blanco hielo) con tinta azul marino y azul glaciar.
+   Noche: noche polar, con luz de hielo y destellos de aurora.
+   Contrastes verificados (WCAG): texto ≥ 5.5:1 · acento sobre fondo ≥ 4.5:1
+   ────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* superficies */
+  --bg: #f2f6fa;
+  --bg-2: #e9eff6;
+  --surface: #ffffff;
+  --surface-2: #f7fafd;
+  --ink: #0b1b2e;
+  --ink-2: #2a3e56;
+  --ink-3: #52657d;
+  --ink-4: #7889a0;
+  --line: #dde6f0;
+  --line-2: #c6d4e3;
+  --hover: rgba(11, 27, 46, 0.055);
+  --selected: color-mix(in oklab, var(--accent) 11%, transparent);
+
+  --shadow-sm: 0 1px 2px rgba(11, 27, 46, 0.06);
+  --shadow: 0 1px 2px rgba(11, 27, 46, 0.05), 0 8px 22px -10px rgba(11, 27, 46, 0.16);
+  --shadow-lg: 0 28px 64px -18px rgba(11, 27, 46, 0.38), 0 2px 8px rgba(11, 27, 46, 0.08);
+  --scrim: rgba(8, 20, 36, 0.46);
+  --hl: #cfe6ff;
+
+  --ok: #1b7a4c;
+  --warn: #8d5a07;
+  --danger: #bf3030;
+  --aurora: #087568;
+  --violet: #5a47d6;
+
+  --glow-1: rgba(26, 102, 207, 0.1);
+  --glow-2: rgba(8, 117, 104, 0.08);
+  --ice-floe: #cfe0f1;
+  --ice-floe-top: #e8f2fb;
+
+  /* acento: relleno claro/oscuro + color del texto encima */
+  --accent-l: #1a66cf;
+  --accent-d: #62b0ff;
+  --on-accent-l: #ffffff;
+  --on-accent-d: #07121f;
+
+  /* tipografía */
+  --f-ui: 'Onest Variable', 'Segoe UI', system-ui, sans-serif;
+  --f-display: var(--f-ui);
+  --f-body: var(--f-ui);
+  --f-write: var(--f-ui);
+  --f-mono: 'JetBrains Mono Variable', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+  --body-size: 15px;
+  --body-lh: 1.55;
+  --write-size: 17px;
+  --title-w: 650;
+
+  /* forma y ritmo */
+  --radius: 8px;
+  --radius-lg: 14px;
+  --gap: 20px;
+  --pad: 18px;
+  --row: 40px;
+  --sidebar-w: 256px;
+  --content-w: 1160px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 120ms;
+  --t: 200ms;
+}
+
+/* ─── Acentos ─── */
+:root[data-accent='glaciar']   { --accent-l: #1a66cf; --accent-d: #62b0ff; --on-accent-l: #ffffff; --on-accent-d: #07121f; }
+:root[data-accent='aurora']    { --accent-l: #087568; --accent-d: #3dd9be; --on-accent-l: #ffffff; --on-accent-d: #07121f; }
+:root[data-accent='violeta']   { --accent-l: #5a47d6; --accent-d: #a596ff; --on-accent-l: #ffffff; --on-accent-d: #07121f; }
+:root[data-accent='atardecer'] { --accent-l: #c0451b; --accent-d: #ff8a63; --on-accent-l: #ffffff; --on-accent-d: #07121f; }
+:root[data-accent='musgo']     { --accent-l: #2f7a4c; --accent-d: #7dcb95; --on-accent-l: #ffffff; --on-accent-d: #07121f; }
+:root[data-accent='grafito']   { --accent-l: #3a4a5e; --accent-d: #aebfd4; --on-accent-l: #ffffff; --on-accent-d: #07121f; }
+:root[data-accent='custom'] {
+  --accent-l: var(--accent-custom, #1a66cf);
+  --accent-d: color-mix(in oklab, var(--accent-custom, #1a66cf) 62%, white);
+  --on-accent-l: #ffffff;
+  --on-accent-d: #07121f;
+}
+
+:root {
+  --accent: var(--accent-l);
+  --on-accent: var(--on-accent-l);
+  --accent-ink: var(--accent);
+  --accent-soft: color-mix(in oklab, var(--accent) 9%, var(--surface));
+  --accent-line: color-mix(in oklab, var(--accent) 38%, var(--line));
+}
+
+/* ─── Noche polar ─── */
+:root[data-theme='dark'] {
+  --bg: #0a1322;
+  --bg-2: #070e1a;
+  --surface: #101c30;
+  --surface-2: #15243d;
+  --ink: #e7eff8;
+  --ink-2: #b7c6d9;
+  --ink-3: #8497b1;
+  --ink-4: #5f7391;
+  --line: #1c2c45;
+  --line-2: #2a3e5e;
+  --hover: rgba(231, 239, 248, 0.06);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 26px -12px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 30px 80px -20px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.4);
+  --scrim: rgba(3, 8, 18, 0.66);
+  --hl: #1d3b63;
+
+  --ok: #6fd1a0;
+  --warn: #f2b45a;
+  --danger: #ff7a7a;
+  --aurora: #3dd9be;
+  --violet: #a596ff;
+
+  --glow-1: rgba(98, 176, 255, 0.12);
+  --glow-2: rgba(61, 217, 190, 0.08);
+  --ice-floe: #1f3555;
+  --ice-floe-top: #2a4670;
+
+  --accent: var(--accent-d);
+  --on-accent: var(--on-accent-d);
+  --accent-soft: color-mix(in oklab, var(--accent) 12%, var(--surface));
+  color-scheme: dark;
+}
+
+/* ─── Combinaciones tipográficas ─── */
+:root[data-type='editorial'] {
+  --f-display: 'Fraunces Variable', 'Iowan Old Style', Georgia, serif;
+  --f-write: 'Newsreader Variable', 'Iowan Old Style', Georgia, serif;
+  --write-size: 18.5px;
+  --title-w: 520;
+}
+:root[data-type='laboratorio'] {
+  --f-display: 'JetBrains Mono Variable', ui-monospace, monospace;
+  --f-body: 'IBM Plex Sans Variable', system-ui, sans-serif;
+  --f-write: 'IBM Plex Sans Variable', system-ui, sans-serif;
+  --body-size: 14.5px;
+  --title-w: 600;
+}
+
+/* ─── Densidad ─── */
+:root[data-density='compacta'] {
+  --gap: 14px;
+  --pad: 13px;
+  --row: 32px;
+  --body-size: 14px;
+  --write-size: 16px;
+}

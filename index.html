@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F2F6FA" />
+    <meta name="description" content="Notipeng: captura, organiza, planifica y ejecuta. Tu espacio personal." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Notipeng" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png" />
+    <title>Notipeng</title>
+    <script>
+      // Aplica tema/acento antes del primer pintado para evitar parpadeo.
+      try {
+        var p = JSON.parse(localStorage.getItem('bitacora.prefs') || '{}');
+        var t = p.theme || 'auto';
+        var dark = t === 'dark' || (t === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+        var d = document.documentElement;
+        d.dataset.theme = dark ? 'dark' : 'light';
+        d.dataset.accent = p.accent || 'glaciar';
+        d.dataset.type = ['hielo','editorial','laboratorio'].indexOf(p.typeset) >= 0 ? p.typeset : 'hielo';
+        d.dataset.density = p.density || 'comoda';
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
