@@ -1,5 +1,7 @@
 # Notipeng
 
+> 🌊 Parte del portafolio de **José Aponte** · [rexoneitor.github.io](https://rexoneitor.github.io)
+
 Tu espacio personal en el hielo para **capturar → organizar → planificar → ejecutar → revisar**.
 
 > *"No quiero una aplicación que me ayude a organizar más cosas. Quiero una aplicación que me ayude a hacer las cosas que realmente importan."*
